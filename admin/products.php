@@ -183,19 +183,18 @@
                     <input type="hidden" name="existing_image" value="<?php echo htmlspecialchars($data[0]['item_image']); ?>">
                     <div class="form-group">
                         <label>Product name</label>
-                        <input pattern="[A-Za-z0-9_]{1,25}" type="text" class="form-control" placeholder="<?php echo htmlspecialchars($data[0]['item_title']); ?>" name="name">
+                        <input pattern="[A-Za-z0-9_]{1,25}" type="text" class="form-control" placeholder="<?php echo $data[0]['item_title'] ?>" name="name">
                         <div class="form-text">Please enter the product name in range (1-25) characters, special characters not allowed!</div>
                     </div>
                     <div class="form-group">
                         <label>Brand name</label>
-                        <input pattern="[A-Za-z0-9_]{1,25}" type="text" class="form-control" placeholder="<?php echo htmlspecialchars($data[0]['item_brand']); ?>" name="brand">
+                        <input pattern="[A-Za-z0-9_]{1,25}" type="text" class="form-control" placeholder="<?php echo $data[0]['item_brand'] ?>" name="brand">
                         <div class="form-text">Please enter the brand name in range (1-25) characters, special characters not allowed!</div>
                     </div>
                     <div class="form-group">
                         <label>Category</label>
                         <select name="cat" class="form-control">
-                            <option value="<?php echo htmlspecialchars($data[0]['item_cat']); ?>" selected><?php echo htmlspecialchars($data[0]['item_cat']); ?></option>
-                            <option value="HealthCare Products">HealthCare Products</option>
+                           <option value="HealthCare Products">HealthCare Products</option>
                             <option value="Viatmin & Supplements">Viatmin & Supplements</option>
                             <option value="Equipments & Diagnostics">Equipments & Diagnostics</option>
                             <option value="Family Planning">Family Planning</option>
@@ -203,39 +202,42 @@
                     </div>
                     <div class="form-group">
                         <label>Product tags</label>
-                        <input pattern="^[#.0-9a-zA-Z\s,-]+$" type="text" class="form-control" placeholder="<?php echo htmlspecialchars($data[0]['item_tags']); ?>" name="tags">
+                        <input pattern="^[#.0-9a-zA-Z\s,-]+$" type="text" class="form-control" placeholder="<?php echo $data[0]['item_tags'] ?>" name="tags">
                         <div class="form-text">Please enter tags for the product in range (1-250) characters, special characters not allowed!</div>
                     </div>
                     <div class="form-group">
                         <label>Product image</label>
-                        <input type="file" accept="image/*" class="form-control" name="image">
+                        <input type="file" accept="image/*" class="form-control"  placeholder="<?php echo $data[0]['item_image'] ?>" name="image">
                         <div class="form-text">Please upload an image for the product.</div>
                     </div>
                     <div class="form-group">
                         <label>Product quantity</label>
-                        <input type="number" class="form-control" placeholder="<?php echo htmlspecialchars($data[0]['item_quantity']); ?>" name="quantity" min="1" max="999">
+                        <input type="number" class="form-control" placeholder="<?php echo $data[0]['item_quantity'] ?>" name="quantity" min="1" max="999">
                         <div class="form-text">Please enter the quantity of the product in range (1-999).</div>
                     </div>
                     <div class="form-group">
                         <label>Product price</label>
                         <div class="input-group">
                             <span class="input-group-text">Ksh</span>
-                            <input pattern="[0-9]+" type="text" class="form-control" aria-label="Amount" name="price" placeholder="<?php echo htmlspecialchars($data[0]['item_price']); ?>">
+                            <input pattern="[0-9]+" type="text" class="form-control" aria-label="Amount" name="price" placeholder="<?php echo $data[0]['item_price'] ?>">
                             <span class="input-group-text">.00</span>
                         </div>
                         <div class="form-text">Please enter the price of the product.</div>
                     </div>
                     <div class="form-group">
                         <label>Product details</label>
-                        <input type="text" class="form-control" placeholder="<?php echo htmlspecialchars($data[0]['item_details']); ?>" name="details">
+                        <input type="text" class="form-control" placeholder="<?php echo $data[0]['item_details'] ?>" name="details">
                         <div class="form-text">Please enter the product details.</div>
                     </div>
                     <button type="submit" class="btn btn-outline-primary" value="update" name="update">Submit</button>
                     <button type="submit" class="btn btn-outline-danger" value="cancel" name="cancel">Cancel</button>
                 </form>
-            <?php } ?>
+            <?php
+              } ?>
 
-            <?php add_item(); if (isset($_GET['add'])) { ?>
+            <?php add_item();
+             if (isset($_GET['add'])) { 
+                ?>
                 <h2>Add Product</h2>
                 <form action="products.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
@@ -289,7 +291,9 @@
                     <button type="submit" class="btn btn-outline-primary" value="update" name="add_item">Submit</button>
                     <button type="submit" class="btn btn-outline-danger" value="cancel" name="cancel">Cancel</button>
                 </form>
-            <?php } ?>
+            <?php
+             }
+             ?>
 
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -346,12 +350,16 @@
                                     <button type="button" class="btn btn-outline-danger"><a href="products.php?delete=<?php echo $data[$i]['item_id']; ?>" style="text-decoration: none; color: black;">Delete</a></button>
                                 </td>
                             </tr>
-                        <?php } } ?>
+                        <?php 
+                    }
+                     } ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <?php include "includes/footer.php"; ?>
+    <?php
+     include "includes/footer.php"; 
+     ?>
 </body>
