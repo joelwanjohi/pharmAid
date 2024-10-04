@@ -18,7 +18,8 @@ include "includes/functions.php";
         }
         body {
             font-family: Arial, sans-serif;
-            position: static;
+            position: relative;
+            min-height: 100vh;
         }
         .navbar {
             background-color: #198754;
@@ -110,6 +111,21 @@ include "includes/functions.php";
                 width: 100%;
             }
         }
+
+        .watermark {
+            position: fixed;
+            top: 60px; 
+            left: 10px; 
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            padding: 10px 20px;
+            background-color: rgba(173, 216, 230, 0.3); 
+            border-radius: 20px; 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+            transition: all 0.4s ease-in-out; 
+            cursor: default;
+        }
     </style>
 </head>
 <body>
@@ -149,21 +165,33 @@ include "includes/functions.php";
         </form>
     </nav>
 
-    <script>
-        var dropdownBtn = document.querySelector('.dropbtn');
-        var dropdownContent = document.getElementById('myDropdown');
+    <div class="watermark" id="watermark">By Joel Wanjohi</div>
 
-        dropdownBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdownContent.classList.toggle('show');
+    <script>
+        const watermark = document.getElementById('watermark');
+
+        function moveWatermark() {
+            const rect = watermark.getBoundingClientRect();
+            if (rect.left < window.innerWidth / 2) {
+                watermark.style.left = 'calc(100% - 200px)'; 
+            } else {
+                watermark.style.left = '50px'; 
+            }
+        }
+
+        setTimeout(moveWatermark, 2000); 
+
+        watermark.addEventListener('mouseover', function() {
+            const rect = watermark.getBoundingClientRect();
+            if (rect.left < window.innerWidth / 2) {
+                watermark.style.left = 'calc(100% - 200px)'; 
+            } else {
+                watermark.style.left = '50px'; 
+            }
         });
 
-        window.addEventListener('click', function(e) {
-            if (!e.target.matches('.dropbtn')) {
-                if (dropdownContent.classList.contains('show')) {
-                    dropdownContent.classList.remove('show');
-                }
-            }
+        watermark.addEventListener('mouseout', function() {
+            moveWatermark();
         });
     </script>
 </body>

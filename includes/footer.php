@@ -164,5 +164,8 @@
 </style>
 
 <div class="footer-copyright">
-    <p>Terms & Conditions | Privacy Policy | Cookie Policy | Copyright © 2024 pharmAid Pharmacy Kenya All Rights</p>
+    <p>Terms & Conditions | Privacy Policy | Cookie Policy | Copyright © 2024 pharmAid Pharmacy Kenya All Rights
+        <br>
+        developed by joel JW
+    </p>
 </div>

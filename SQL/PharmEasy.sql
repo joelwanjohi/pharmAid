@@ -150,25 +150,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_Lname`, `email`, `user_password`, `user_id`, `user_fname`, `user_address`) VALUES
 ('user', 'user@gmail.com', 'user', 55, 'user', 'NO.18, 1ST FLOOR, 3RD MAIN, MUNIYELLAPPA LAYOUT, VINAYAKANAGAR, J.P NAGAR, 5TH PHASE BANGALURU, KARNATAKA, INDIA - 560078'),
 ('Banik', 'kalinda@gmail.com', '5Kalinda', 62, 'Kalinda', '4, Charmuni Compd, Link Road, Malad(w)  Mumbai, Maharashtra, 400064'),
-('Krish', 'rani@gmail.com', '1RaniKrish', 63, 'Rani', 'C 50, Opp Mansarover Garden, Sharda Puri  Delhi, Delhi, 110015'),
-('Banik', 'shakti@gmail.com', 'Shakti1221', 64, 'Shakti', '3887/1, Military Road Chowk, Anand Parbat  Delhi, Delhi, 110005'),
-('Peri', 'mehul@gmail.com', 'DXGDZ6DtkY', 66, 'Mehul', '3887/1, Military Road Chowk, Anand Parbat  Delhi, Delhi, 110005'),
-('Goda', 'rajni@gmail.com', 'cp3c2SGrSc', 67, 'Rajni', '1, Basement, Gujarath Indl Estate, Vishweshwar Nagar, Off Aarey Road, Goregaon (e)  Mumbai, Maharashtra, 400063'),
-('Raj', 'kashika@gmail.com', 'sjBL6cPhkr', 68, 'Kashika', '115, Tj Complex, Pankaja Mill Road, Ramanathapuram  Coimbatore, Tamil Nadu, 641045'),
-('Dubey', 'sahima@gmail.com', 'BvM7pmPxeY', 69, 'Sahima', 'Porbunder Castle, 3rd Pasta Lane, Colaba  Mumbai, Maharashtra, 400005'),
-('Iyengar', 'rachana@gmail.com', '52H88tNA7C', 70, 'Rachana', 'E/13, Midc Indl Area, Taloja, Navi Mumbai  Mumbai, Maharashtra, 410208'),
-('Luthra', 'viti@gmail.com', 'YtnjB5Uw7n', 71, 'Viti', '128, Venkatranganpillai Street Tripli  Chennai, Tamil Nadu, 600005'),
-('Mitra', 'minali@gmail.com', '6qECNmtCXx', 72, 'Minali', 'S-8, Divine Home, Ic Colony, Next To Mary Girls School Bo, Mandapeshwar  Mumbai, Maharashtra, 400103'),
-('Vala', 'arjun@gmail.com', 'vLqxtB39DA', 75, 'Arjun', '3887/1, Military Road Chowk, Anand Parbat  Delhi, Delhi, 110005'),
-('Iyengar', 'ritika@gmail.com', 'Y89jnWsKNR', 76, 'Ritika', 'F 154, Main Road, Jagat Puri  Delhi, Delhi, 110051'),
-('Raju', 'drishya@gmail.com', 'ZDMHs6CYS6', 78, 'Drishya', '1/2, Naaz Complex, 3 Nr, N R Road  Bangalore, Karnataka, 560002'),
-('Narasimhan', 'puja@gmail.com', 'wxFuAK3Gxt', 79, 'Puja', 'Shop No.14, Janata Mkt, Nr Rly Stn, Chembur  Mumbai, Maharashtra, 400071'),
-('Rajagopal', 'vasu@gmail.com', 'C5UFaSsBdB', 80, 'Vasu', '458/2a, Hanuman Road  Delhi, Delhi, 110017'),
-('Goyal', 'jyotsna@gmail.com', 'Rr7dnSuCuM', 81, 'Jyotsna', '33 Dahanukar Bldg, 480 Kalbadevi Road, Kalbadevi  Mumbai, Maharashtra, 400002'),
-('Saxena', 'yash@gmail.com', 'HMFRn2RnTv', 82, 'Yash', '14, 50 Rd, Muneshwara Block  Bangalore, Karnataka, 560026'),
-('Setty', 'subhash@gmail.com', '5L4xSHcWEu', 83, 'Subhash', 'R No 15 1st Flr, No 23, Bhupat Bhavan, Vaju Kotak Marg, Ballard Estate  Mumbai, Maharashtra, 400038'),
-('Sankar', 'narendra@gmail.com', 'YrkMMgsg84', 84, 'Narendra', '194/1/7, G. T. Road, Salkia  Kolkata, West Bengal, 711106'),
-('Vala', 'kalind3a@gmail.com', '5Kalinda', 85, 'Arjun', '3887/1, Military Road Chowk, Anand Parbat  Delhi, Delhi, 110005');
+
 
 --
 -- Indexes for dumped tables
