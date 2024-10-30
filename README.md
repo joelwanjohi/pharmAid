@@ -1,0 +1,1 @@
+E-commerce platform for pharmaceuticals with an intuitive UI and admin dashboard for inventory and order management. Built with PHP, HTML, CSS, Bootstrap, and MySQL, demonstrating skills in front-end design and database management.
