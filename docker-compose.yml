@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  webserver:
+    build: .
+    container_name: pharmeasy_web
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=pharmeasy_user
+      - MYSQL_PASSWORD=pharmeasy_pass
+      - MYSQL_DATABASE=PharmEasy
+    networks:
+      - pharmeasy_network
+
+  db:
+    image: mysql:8.0
+    container_name: pharmeasy_db
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_secure_pass
+      - MYSQL_DATABASE=PharmEasy
+      - MYSQL_USER=pharmeasy_user
+      - MYSQL_PASSWORD=pharmeasy_pass
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./SQL:/docker-entrypoint-initdb.d
+    networks:
+      - pharmeasy_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pharmeasy_phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=db
+      - MYSQL_ROOT_PASSWORD=root_secure_pass
+    depends_on:
+      - db
+    networks:
+      - pharmeasy_network
+
+volumes:
+  mysql_data:
+
+networks:
+  pharmeasy_network:
+    driver: bridge
