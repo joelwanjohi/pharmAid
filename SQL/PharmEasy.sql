@@ -28,12 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `admin_id` int(3) NOT NULL,
+  `admin_id` int(3) NOT NULL AUTO_INCREMENT,
   `admin_email` varchar(50) NOT NULL,
   `admin_fname` varchar(20) NOT NULL,
   `admin_lname` varchar(20) NOT NULL,
-  `admin_password` varchar(50) NOT NULL
+  `admin_password` varchar(255) NOT NULL,
+  PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Dumping data for table `admin`
@@ -52,7 +54,7 @@ INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_fname`, `admin_lname`, `a
 --
 
 CREATE TABLE `item` (
-  `item_id` int(5) NOT NULL,
+  `item_id` int(5) NOT NULL AUTO_INCREMENT,
   `item_title` varchar(250) NOT NULL,
   `item_brand` varchar(250) NOT NULL,
   `item_cat` varchar(15) NOT NULL,
@@ -60,8 +62,10 @@ CREATE TABLE `item` (
   `item_tags` varchar(250) NOT NULL,
   `item_image` varchar(250) NOT NULL,
   `item_quantity` int(3) NOT NULL,
-  `item_price` int(10) NOT NULL
+  `item_price` int(10) NOT NULL,
+  PRIMARY KEY (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
 -- Dumping data for table `item`
